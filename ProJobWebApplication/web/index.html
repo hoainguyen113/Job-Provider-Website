@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Job</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./Tool/css_bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+</head>
+<body>
+    <!--header-->
+    <header>
+    <nav class="navbar navbar-expand-md bg-secondary">
+        <div class="container-fluid navbar-header" style="padding: 0 50px;">
+          <h2 class="col-sm-1 "><a class="navbar-brand" href="#">ProJob</a></h2>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="col-md-11 collapse navbar-collapse" id="mynavbar">
+
+            <form class="col-md-4 ms-4 ms-xl-1 justify-content-start d-flex navbar-form">
+                <input class="form-control" type="text" placeholder="Looking for Jobs...">
+                <i role="button" class='bx bx-search'></i>
+            </form>
+
+            <ul class="col-md-8 d-flex justify-content-end navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item ms-5">                
+                <a href="" class="nav-link">Login<i class='bx bxs-user'></i></a>                
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/carousel1.png" height="400px" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="images/the bee.png" height="400px" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="images/carousel3.png" height="400px" class="d-block" style="width:100%">
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!--section slogen-->
+<section class="slogen">
+    <div class="slogen_swrapper">
+        <i class='bx bx-pulse'></i>
+        <div class="slogen_swrapper-content">
+        <h3>PROVIDE THE BEST JOB</h3>
+        <span>ProJob</span>
+        </div>
+    </div>
+</section>
+
+<!--filter-->
+<section class="row filter mt-3 mb-3">
+  <div class="container-custom d-flex flex-wrap">
+    <div class="col-12 col-md-4 d-flex align-items-center mt-4 mt-md-0 justify-content-start filter-category-left">
+      <i class='bx bx-menu-alt-left'></i>
+      <select name="category" id="category">
+        <option value="area">Area</option>
+        <option value="sector"">Sector</option>
+        <option value="time">Working hours</option>
+        <option value="salary">Salary</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 filter-category-wrapper d-none d-md-flex align-items-center ">
+      <!--control-->      
+      <button id="leftBtnFilter"><i class='bx bx-chevron-left'></i></button>
+      <!--end control-->
+      <ul class="filter-category d-flex list-unstyled">      
+ 
+      </ul>
+
+      <button id="rightBtnFilter"><i class='bx bx-chevron-right' ></i></button>
+    </div>    
+  </div>
+</section>
+
+<!--blog-->
+<section class="blog">
+  <div class="container-custom">
+    <div class="row blog_list post_list mb-3">
+      
+    </div>
+    
+
+  </div>
+
+  <!--pagination-->
+  <div id="comp-control" class="d-flex pagi-control justify-content-center align-items-center mt-1">
+    <button id="btnLeftPagination"><i class='bx bx-chevron-left'></i></button>
+    <p class="mb-0 ms-1 me-1"><span id="currentPageTag">1</span> / <span id="totalPage">??</span> pages</p>
+    <button id="btnRightPagination"><i class='bx bx-chevron-right'></i></button>
+  </div>
+
+</section>
+
+<!--top company-->
+<section>
+  <div class="container-custom comp">
+    <div class="row align-items-center comp-content mb-3">
+      <h3 class="col-sm-6 comp-title">
+        Top of the Company
+      </h3>
+      <!--control-->
+      <div id="comp-control" class="col-sm-6 comp-btn d-flex justify-content-end">
+      <button id="leftBtnComp"><i class='bx bx-chevron-left'></i></button>
+      <button id="rightBtnComp"><i class='bx bx-chevron-right' ></i></button>
+      </div>
+    </div>
+
+    <div class="comp-list_card">
+      <div class="d-flex flex-nowrap blog_list mb-3">
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name1</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name2</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name3</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name4</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name5</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name6</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div class="col-12 col-sm-3 blog-wrap_item">
+          <div class="blog_item card">
+            <div class="card-body">
+              <img class="rounded me-2 card-img" src="images/carousel1.png" alt="">
+              <div class="bog_item-content text-center">
+                <p class="card-title">Company Name</p>               
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--banner ad-->
+<section class="ads">
+  <img src="images/carousel3.png" alt="banner ads">
+</section>
+
+<!--top outstanding-->
+<section class="outstading container-custom">
+    <div class="outstading-wrapper">
+      <h3>Top Outstanding Profession</h3>
+
+      <div class="outstading-wrapper_list">
+
+        <div class="row">
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row d-none d-sm-flex">
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 col-md-3 card-wrapper mb-3">
+
+            <div class="card outstading-wrapper_list_item">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                  <img width="70px"  src="images/kinh-doanh-ban-hang.webp" alt="bussiness">
+                  </div>
+                  <div class="outstading-wrapper_list_item_content text-center">
+                    <p class="card-title ">Sector Name</p>
+                    <span class="card-text ">quantity</span>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+     
+    </div>
+</section>
+
+<!--footer-->
+<footer>
+  <div class="container-custom">
+    <div class="row">
+      <div class="col-12 col-md-7">
+        <div class="row">
+          <div class="col-6 col-sm-4 about">
+            <p>ABOUT US</p>
+            <div class="link-wrapper d-flex flex-column">
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 term">
+            <p>TERM & CONDITION</p>
+            <div class="link-wrapper d-flex flex-column">
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+              <a href="#">text lorem</a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 service d-flex justify-content-sm-end">
+            <div>
+              <p>SERVICES</p>
+              <div class="link-wrapper d-flex flex-column">
+                <a href="#">text lorem</a>
+                <a href="#">text lorem</a>
+                <a href="#">text lorem</a>
+                <a href="#">text lorem</a>
+                <a href="#">text lorem</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 footer-leftContent">
+        <p>WANT TO POST A JOB?</p>
+        <span>Contact us at: </span>
+        <ul class="nav mt-1">
+          <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxl-twitter fs-2'></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxl-facebook-circle fs-2'></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxl-instagram-alt fs-2' ></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxl-linkedin-square fs-2' ></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="js/app.js"></script>
+<script src="./Tool/js_bootstrap.bundle.min.js"></script>
+</html>
